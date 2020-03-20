@@ -125,8 +125,6 @@ const isBeingPinged = message => {
   await manager.train();
   console.log('Done training!');
   manager.save();
-  // const response = await manager.process('en', 'I should go now');
-  // console.log(response);
 
   client.on('ready', () => {
     console.log(
