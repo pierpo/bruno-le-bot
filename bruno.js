@@ -139,7 +139,9 @@ const isBeingPinged = message => {
 
     if (!isBeingPinged(message)) return;
 
-    const messageWithoutMention = message.content.match(/^<@!\d+>(.*)$/)[1];
+    const messageWithoutMention = message.content
+      .replace(/<@!\d+>/, '')
+      .replace('  ', ' ');
     const parsedMessage = normalizeString(messageWithoutMention.toLowerCase());
 
     console.log('Processing...');
