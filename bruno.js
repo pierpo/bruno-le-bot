@@ -117,7 +117,7 @@ const normalizeString = str =>
   str.normalize('NFD').replace(/[\u0300-\u036f]/g, '');
 
 const isBeingPinged = message => {
-  botId = client.user.id;
+  const botId = client.user.id;
   return message.mentions.users.get(botId);
 };
 
