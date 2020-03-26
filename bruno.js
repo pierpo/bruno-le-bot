@@ -17,6 +17,10 @@ manager.addNamedEntityText('beer', 'juda', ['fr'], ['Juda']);
 manager.addNamedEntityText('beer', 'pinte', ['fr'], ['pinte']);
 manager.addNamedEntityText('beer', 'ipa', ['fr'], ['ipa']);
 
+manager.addNamedEntityText('food', 'pastaCarbo', ['fr'], ['pâtes carbo']);
+manager.addNamedEntityText('food', 'pastaCarbo', ['fr'], ['pâtes à la carbonara']);
+manager.addNamedEntityText('food', 'burrata', ['fr'], ['burrata']);
+
 // demande de biere
 manager.addDocument('fr', 'tu me sers une %beer%', 'serve.beer');
 manager.addDocument('fr', 'je peux te prendre une %beer%', 'serve.beer');
@@ -44,11 +48,19 @@ manager.addAnswer('fr', 'serve.cocktail', "C'est parti ! :cocktail:");
 manager.addAnswer('fr', 'serve.cocktail', 'Voilà pour toi ! :cocktail:');
 manager.addAnswer('fr', 'serve.cocktail', 'Tiens, santé ! :cocktail:');
 
+// demande de food
+manager.addDocument('fr', 'tu me prépares des %food%', 'serve.food');
+manager.addAnswer('fr', 'serve.food', 'Et voilà :spaghetti:');
+
 // tu as quoi
 manager.addDocument('fr', 'tu as quoi ?', 'what.do.you.serve');
+manager.addDocument('fr', "tu as quoi à manger?", 'what.do.you.serve.food');
 manager.addDocument('fr', 'tu sers quoi ?', 'what.do.you.serve');
+manager.addDocument('fr', "tu sers quoi ? à manger?", 'what.do.you.serve.food');
 manager.addDocument('fr', "qu'est-ce que t'as ?", 'what.do.you.serve');
+manager.addDocument('fr', "qu'est-ce que tu sers à manger?", 'what.do.you.serve.food');
 manager.addDocument('fr', "qu'est-ce que tu sers ?", 'what.do.you.serve');
+manager.addDocument('fr', "qu'est-ce que tu sers à manger?", 'what.do.you.serve.food');
 
 manager.addAnswer(
   'fr',
@@ -61,6 +73,13 @@ manager.addAnswer(
   'what.do.you.serve',
   "Si tu veux je te sers une juda, blanche, blonde, IPA, mojito, C'Décalé...",
 );
+
+manager.addAnswer(
+  'fr',
+  'what.do.you.serve',
+  "Si tu veux je te sers une burrata ou des pâtes carbonara...",
+);
+
 
 // salut
 manager.addDocument('fr', 'salut', 'greetings.hello');
