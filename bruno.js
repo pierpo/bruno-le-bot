@@ -67,11 +67,7 @@ manager.addDocument('fr', 'je veux bien des %food%', 'serve.food');
 manager.addDocument('fr', 'je veux bien un %food%', 'serve.food');
 manager.addDocument('fr', 'je veux bien une %food%', 'serve.food');
 
-manager.addAnswer(
-  'fr',
-  'serve.food',
-  'Et voilà :spaghetti: Tu veux du parmesan ?',
-);
+manager.addAnswer('fr', 'serve.food', 'Et voilà :spaghetti:');
 
 // tu as quoi
 manager.addDocument('fr', 'tu as quoi ?', 'what.do.you.serve');
