@@ -50,7 +50,11 @@ manager.addAnswer('fr', 'serve.cocktail', 'Tiens, santé ! :cocktail:');
 
 // demande de food
 manager.addDocument('fr', 'tu me prépares des %food%', 'serve.food');
-manager.addAnswer('fr', 'serve.food', 'Et voilà :spaghetti:');
+manager.addDocument('fr', 'je peux te prendre un %food%', 'serve.food');
+manager.addDocument('fr', 'un %food%', 'serve.food');
+manager.addDocument('fr', 'je veux bien un %food%', 'serve.food');
+
+manager.addAnswer('fr', 'serve.food', 'Et voilà :spaghetti: Tu veux du parmesan ?');
 
 // tu as quoi
 manager.addDocument('fr', 'tu as quoi ?', 'what.do.you.serve');
