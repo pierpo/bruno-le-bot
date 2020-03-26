@@ -76,7 +76,7 @@ manager.addAnswer(
 
 manager.addAnswer(
   'fr',
-  'what.do.you.serve',
+  'what.do.you.serve.food',
   "Si tu veux je te sers une burrata ou des pâtes carbonara...",
 );
 
