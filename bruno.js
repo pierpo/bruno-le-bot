@@ -18,7 +18,12 @@ manager.addNamedEntityText('beer', 'pinte', ['fr'], ['pinte']);
 manager.addNamedEntityText('beer', 'ipa', ['fr'], ['ipa']);
 
 manager.addNamedEntityText('food', 'pastaCarbo', ['fr'], ['pâtes carbo']);
-manager.addNamedEntityText('food', 'pastaCarbo', ['fr'], ['pâtes à la carbonara']);
+manager.addNamedEntityText(
+  'food',
+  'pastaCarbo',
+  ['fr'],
+  ['pâtes à la carbonara'],
+);
 manager.addNamedEntityText('food', 'burrata', ['fr'], ['burrata']);
 
 // demande de biere
@@ -50,21 +55,41 @@ manager.addAnswer('fr', 'serve.cocktail', 'Tiens, santé ! :cocktail:');
 
 // demande de food
 manager.addDocument('fr', 'tu me prépares des %food%', 'serve.food');
+manager.addDocument('fr', 'tu me prépares un %food%', 'serve.food');
+manager.addDocument('fr', 'tu me prépares une %food%', 'serve.food');
+manager.addDocument('fr', 'je peux te prendre des %food%', 'serve.food');
 manager.addDocument('fr', 'je peux te prendre un %food%', 'serve.food');
+manager.addDocument('fr', 'je peux te prendre une %food%', 'serve.food');
+manager.addDocument('fr', 'des %food%', 'serve.food');
 manager.addDocument('fr', 'un %food%', 'serve.food');
+manager.addDocument('fr', 'une %food%', 'serve.food');
+manager.addDocument('fr', 'je veux bien des %food%', 'serve.food');
 manager.addDocument('fr', 'je veux bien un %food%', 'serve.food');
+manager.addDocument('fr', 'je veux bien une %food%', 'serve.food');
 
-manager.addAnswer('fr', 'serve.food', 'Et voilà :spaghetti: Tu veux du parmesan ?');
+manager.addAnswer(
+  'fr',
+  'serve.food',
+  'Et voilà :spaghetti: Tu veux du parmesan ?',
+);
 
 // tu as quoi
 manager.addDocument('fr', 'tu as quoi ?', 'what.do.you.serve');
-manager.addDocument('fr', "tu as quoi à manger?", 'what.do.you.serve.food');
+manager.addDocument('fr', 'tu as quoi à manger?', 'what.do.you.serve.food');
 manager.addDocument('fr', 'tu sers quoi ?', 'what.do.you.serve');
-manager.addDocument('fr', "tu sers quoi ? à manger?", 'what.do.you.serve.food');
+manager.addDocument('fr', 'tu sers quoi ? à manger?', 'what.do.you.serve.food');
 manager.addDocument('fr', "qu'est-ce que t'as ?", 'what.do.you.serve');
-manager.addDocument('fr', "qu'est-ce que tu sers à manger?", 'what.do.you.serve.food');
+manager.addDocument(
+  'fr',
+  "qu'est-ce que tu sers à manger?",
+  'what.do.you.serve.food',
+);
 manager.addDocument('fr', "qu'est-ce que tu sers ?", 'what.do.you.serve');
-manager.addDocument('fr', "qu'est-ce que tu sers à manger?", 'what.do.you.serve.food');
+manager.addDocument(
+  'fr',
+  "qu'est-ce que tu sers à manger?",
+  'what.do.you.serve.food',
+);
 
 manager.addAnswer(
   'fr',
@@ -81,9 +106,8 @@ manager.addAnswer(
 manager.addAnswer(
   'fr',
   'what.do.you.serve.food',
-  "Si tu veux je te sers une burrata ou des pâtes carbonara...",
+  'Si tu veux je te sers une burrata ou des pâtes carbonara...',
 );
-
 
 // salut
 manager.addDocument('fr', 'salut', 'greetings.hello');
@@ -136,10 +160,10 @@ manager.addAnswer('fr', 'greetings.bye', 'A plus ! :wave:');
 manager.addAnswer('fr', 'greetings.bye', 'Bye ! :wave:');
 manager.addAnswer('fr', 'greetings.bye', 'Ciao ! :wave:');
 
-const normalizeString = str =>
+const normalizeString = (str) =>
   str.normalize('NFD').replace(/[\u0300-\u036f]/g, '');
 
-const isBeingPinged = message => {
+const isBeingPinged = (message) => {
   const botId = client.user.id;
   return message.mentions.users.get(botId);
 };
@@ -156,7 +180,7 @@ const isBeingPinged = message => {
     client.user.setActivity(`Pingez moi pour me parler`);
   });
 
-  client.on('message', async message => {
+  client.on('message', async (message) => {
     console.log('Received message!');
     if (message.author.bot) return;
 
