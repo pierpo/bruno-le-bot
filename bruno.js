@@ -17,14 +17,19 @@ manager.addNamedEntityText('beer', 'juda', ['fr'], ['Juda']);
 manager.addNamedEntityText('beer', 'pinte', ['fr'], ['pinte']);
 manager.addNamedEntityText('beer', 'ipa', ['fr'], ['ipa']);
 
-manager.addNamedEntityText('food', 'pastaCarbo', ['fr'], ['pâtes carbo']);
 manager.addNamedEntityText(
   'food',
   'pastaCarbo',
   ['fr'],
-  ['pâtes à la carbonara'],
+  ['pâtes à la carbonara', 'pâtes carbo'],
 );
 manager.addNamedEntityText('food', 'burrata', ['fr'], ['burrata']);
+manager.addNamedEntityText(
+  'food',
+  'planche',
+  ['fr'],
+  ['planche', 'planche mixte', 'planche charcut', 'planche charcuterie'],
+);
 
 // demande de biere
 manager.addDocument('fr', 'tu me sers une %beer%', 'serve.beer');
