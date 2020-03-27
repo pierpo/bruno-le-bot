@@ -151,6 +151,25 @@ manager.addAnswer(
   'Au top et toi ? Tu veux quelque chose à boire ?',
 );
 
+// je peux te payer plus tard
+manager.addDocument(
+  'fr',
+  "je peux te payer plus tard ? j'ai pas ma carte...",
+  'pay.later',
+);
+manager.addDocument('fr', 'je peux te payer plus tard ?', 'pay.later');
+manager.addDocument(
+  'fr',
+  "j'ai pas ma carte bleue, je peux payer plus tard ?",
+  'pay.later',
+);
+
+manager.addAnswer(
+  'fr',
+  'pay.later',
+  'Alors ouais mais tu me laisses une chaussure :mans_shoe:',
+);
+
 // au revoir
 manager.addDocument('fr', 'ciao', 'greetings.bye');
 manager.addDocument('fr', 'au revoir', 'greetings.bye');
