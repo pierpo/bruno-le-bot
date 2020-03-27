@@ -24,6 +24,7 @@ manager.addNamedEntityText(
   ['pâtes à la carbonara', 'pâtes carbo'],
 );
 manager.addNamedEntityText('food', 'burrata', ['fr'], ['burrata']);
+manager.addNamedEntityText('food', 'burger', ['fr'], ['burger']);
 manager.addNamedEntityText(
   'food',
   'planche',
